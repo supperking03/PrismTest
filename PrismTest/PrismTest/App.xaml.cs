@@ -26,7 +26,6 @@ namespace PrismTest
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<PageA>();
-            ;
         }
     }
 }
