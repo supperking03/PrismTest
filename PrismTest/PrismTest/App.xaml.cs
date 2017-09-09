@@ -1,4 +1,5 @@
-﻿using Prism.Unity;
+﻿using Prism.Navigation;
+using Prism.Unity;
 using PrismTest.Views;
 using Xamarin.Forms;
 
@@ -12,13 +13,19 @@ namespace PrismTest
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("NavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+            var navigationParameter = new NavigationParameters
+            {
+                {"message", "Hello"}
+            };
+
+            NavigationService.NavigateAsync("NavigationPage/MainPage", navigationParameter);
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<PageA>();
         }
     }
 }

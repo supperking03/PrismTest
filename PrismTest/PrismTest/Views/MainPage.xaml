@@ -5,7 +5,16 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismTest.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-  </StackLayout>
+  <StackLayout >
+    <ListView ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding ID}"></TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+      <Button Text="Go to page A" Command="{Binding NavigateCommand}"></Button>
+      <Label Text="{Binding Message}"></Label>
+    </StackLayout>
 </ContentPage>
