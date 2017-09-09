@@ -30,7 +30,7 @@ namespace PrismTest.Droid
     {
         public void RegisterTypes(IUnityContainer container)
         {
-
+            //abc comment
         }
     }
 }
